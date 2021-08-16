@@ -53,12 +53,6 @@ const renderEmployee = doc => {
     });
 }
 
-// db.collection('employees').get().then(querySnapshot => {
-//     querySnapshot.forEach(doc => {
-//         renderEmployee(doc);
-//     });
-// });
-
 db.collection('employees').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
         if (change.type === 'added') {
